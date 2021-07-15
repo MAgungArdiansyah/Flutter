@@ -17,6 +17,20 @@ class MyApp extends StatelessWidget {
   }
 }
 
+class FirstScreen extends StatefulWidget {
+  @override
+  _FirstScreenState createState() => _FirstScreenState();
+}
+
+class _FirstScreenState extends State<FirstScreen> {
+  String? language;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
+
 class detailscreen extends StatelessWidget {
   const detailscreen({Key? key}) : super(key: key);
 
@@ -74,6 +88,31 @@ class detailscreen extends StatelessWidget {
               'Berada di jalur utama Bandung-Lembang, Farm House menjadi objek wisata yang tidak pernah sepi pengunjung. Selain karena letaknya strategis, kawasan ini juga menghadirkan nuansa wisata khas Eropa. Semua itu diterapkan dalam bentuk spot swafoto Instagramable.',
               textAlign: TextAlign.justify,
               style: TextStyle(fontSize: 16),
+            ),
+          ),
+          Container(
+            child: ElevatedButton(
+              child: Text('Tekan'),
+              onPressed: () {},
+            ),
+          ),
+          Container(
+            child: TextButton(
+              child: Text('Text Button'),
+              onPressed: () {},
+            ),
+          ),
+          Container(
+            child: OutlinedButton(
+              child: Text('Outline Button'),
+              onPressed: () {},
+            ),
+          ),
+          Container(
+            child: IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.volume_up),
+              tooltip: 'Increase volume by 10',
             ),
           )
         ],
