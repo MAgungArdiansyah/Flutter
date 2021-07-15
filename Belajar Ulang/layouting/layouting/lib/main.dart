@@ -22,13 +22,52 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: FirstScreen(),
+      home: layouting(),
+    );
+  }
+}
+
+class layouting extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Layouting', style: TextStyle(fontWeight: FontWeight.bold)),
+        leading: IconButton(
+          icon: Icon(Icons.menu, color: Colors.white),
+          onPressed: null,
+        ),
+        actions: <Widget>[
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.search),
+          ),
+          IconButton(onPressed: () {}, icon: Icon(Icons.account_circle))
+        ],
+      ),
+      body: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: <Widget>[
+          IconButton(onPressed: () {}, icon: Icon(Icons.share)),
+          IconButton(onPressed: () {}, icon: Icon(Icons.thumb_up)),
+          IconButton(onPressed: () {}, icon: Icon(Icons.thumb_down)),
+          Column(
+            children: <Widget>[
+              Text(
+                'Hallo Saya Agung',
+                style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+              ),
+              Text('Saya baru belajar flutter')
+            ],
+          )
+        ],
+      ),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({Key? key, required this.title}) : super(key: key);
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
@@ -108,44 +147,6 @@ class _MyHomePageState extends State<MyHomePage> {
         tooltip: 'Increment',
         child: Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
-    );
-  }
-}
-
-class FirstScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(icon: Icon(Icons.menu, color: Colors.white)),
-        title: Text('First Screen'),
-        actions: <Widget>[
-          // <Wiget> adalah dart6 type system generik
-          IconButton(
-              icon: Icon(
-            Icons.search,
-            color: Colors.white,
-          ))
-        ],
-      ),
-      body: Container(
-        child: Text('Hello World', style: TextStyle(fontSize: 40)),
-        width: 300,
-        height: 100,
-        padding: EdgeInsets.all(10),
-        margin: EdgeInsets.all(10),
-        decoration: BoxDecoration(
-            color: Colors.amber[400],
-            /*shape: BoxShape.circle,*/ boxShadow: [
-              BoxShadow(
-                  color: Colors.black, offset: Offset(3, 6), blurRadius: 10)
-            ],
-            border: Border.all(color: Colors.green[300], width: 6),
-            borderRadius: BorderRadius.circular(10)),
-      ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-      ),
     );
   }
 }
