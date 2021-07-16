@@ -179,8 +179,10 @@ class _SwitchButtonState extends State<SwitchButton> {
             setState(() {
               lightOn = value;
             });
-            ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text(lightOn ? 'Light On' : 'Light Off')));
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+              content: Text(lightOn ? 'Light On' : 'Light Off'),
+              duration: Duration(seconds: 1),
+            ));
           }),
     );
   }
