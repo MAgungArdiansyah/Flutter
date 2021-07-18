@@ -1,0 +1,80 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        // This is the theme of your application.
+        //
+        // Try running your application with "flutter run". You'll see the
+        // application has a blue toolbar. Then, without quitting the app, try
+        // changing the primarySwatch below to Colors.green and then invoke
+        // "hot reload" (press "r" in the console where you ran "flutter run",
+        // or simply save your changes to "hot reload" in a Flutter IDE).
+        // Notice that the counter didn't reset back to zero; the application
+        // is not restarted.
+        primarySwatch: Colors.blue,
+      ),
+      home: TestExpanded(),
+    );
+  }
+}
+
+class TestExpanded extends StatelessWidget {
+  const TestExpanded({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Expanded & Flexsible'),
+      ),
+      body: Column(
+        children: <Widget>[
+          Expanded(
+            child: Container(
+              color: Colors.red,
+            ),
+          ),
+          Expanded(
+            child: Container(
+              color: Colors.orange,
+            ),
+          ),
+          Expanded(
+            child: Container(
+              color: Colors.yellow,
+            ),
+          ),
+          Expanded(
+            child: Container(
+              color: Colors.green,
+            ),
+          ),
+          Expanded(
+            child: Container(
+              color: Colors.blue,
+            ),
+          ),
+          Expanded(
+            child: Container(
+              color: Colors.indigo,
+            ),
+          ),
+          Expanded(
+            child: Container(
+              color: Colors.purple,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
